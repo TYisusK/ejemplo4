@@ -1,8 +1,28 @@
+<!-- Contenedor del menú superior derecho -->
+<div class="nav-container">
+  <a href="https://portafolio-de-evidencias-parcial1.netlify.app/" class="home-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home">
+  </a>
+
+  <!-- Menú desplegable con select -->
+  <select class="menu-select" onchange="location = this.value;">
+    <option value="" selected disabled>Menú</option>
+    <option value="https://fundamentos-ejemmplo1.netlify.app/">Ejemplo 1</option>
+    <option value="https://ejemplo2dados.netlify.app/">Ejemplo 2</option>
+    <option value="https://ejemplo3productos.netlify.app/">Ejemplo 3</option>
+    <option value="https://ejemplo4formularioreact.netlify.app/">Ejemplo 4</option>
+    <option value="https://ejemplo5formularioreactivo.netlify.app/">Ejemplo 5</option>
+    <option value="https://hotelutx-parcial1.netlify.app/">Proyecto</option>
+  </select>
+</div>
+
 <div style="margin: 20px;">
-  <h1>Lista tareas (ejemplo de formularios reactivos)</h1>
+  <h1>Lista de Tareas (Ejemplo de Formularios Reactivos)</h1>
+
   <p>
     Tarea: <input type="text" [formControl]="tarea" />
   </p>
+
   <p>
     <button type="button" class="btn btn-primary" (click)="agregarTarea()">Agregar tarea</button>
   </p>
@@ -18,7 +38,33 @@
   <p>
     <button type="button" class="btn btn-danger" (click)="borrarTareas()">Borrar todas las tareas</button>
   </p>
-
 </div>
 
 <router-outlet></router-outlet>
+
+<!-- Estilos -->
+<style>
+  .nav-container {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+  }
+
+  .home-btn img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .menu-select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+</style>
